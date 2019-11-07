@@ -1,5 +1,7 @@
 package com.example.calculator;
 
+import static com.example.calculator.Result.getResult;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Map;
@@ -17,10 +19,6 @@ public class CalculatorController {
    @GetMapping("/add")
    public Map<String, String> add(@RequestParam BigDecimal augend, @RequestParam BigDecimal addend ) {
       return getResult(augend.add(addend));
-   }
-
-   private Map<String, String> getResult( BigDecimal result ) {
-      return Map.of("result", result.toPlainString());
    }
 
    // TODO: Check Math Context
