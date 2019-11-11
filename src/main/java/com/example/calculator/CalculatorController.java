@@ -1,6 +1,7 @@
 package com.example.calculator;
 
 import static com.example.calculator.ResultBuilder.getResult;
+import static com.example.calculator.ResultBuilder.getResultFromError;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -32,6 +33,9 @@ public class CalculatorController {
 
    @GetMapping("/divide")
    public ApiResult divide(@RequestParam BigDecimal dividend, @RequestParam BigDecimal divisor) {
+      if (divisor.equals(BigDecimal.ZERO)) {
+         return getResultFromError("no division by null");
+      }
       return getResult(dividend.divide(divisor, RoundingMode.HALF_EVEN));
    }
 

@@ -1,6 +1,7 @@
 package com.example.calculator;
 
 import static com.example.calculator.ResultBuilder.getResult;
+import static com.example.calculator.ResultBuilder.getResultFromError;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -28,8 +29,13 @@ public class ScientificController {
 
    @GetMapping("/factorial/{number}")
    public ApiResult factorial(@PathVariable int number ) {
-      BigInteger result = _scientificCalculator.calculateFactorial(number);
-      return getResult(result);
+      try {
+         BigInteger factorial = _scientificCalculator.calculateFactorial(number);
+         return getResult(factorial);
+      }
+      catch ( ArithmeticException e ) {
+         return getResultFromError(e.getMessage());
+      }
    }
 
    @GetMapping("/prime/{number}")

@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 public class ScientificCalculator {
 
    public BigInteger calculateFactorial( int number ) {
+      if (number < 0) {
+         throw new ArithmeticException("factorial is only defined for positive numbers");
+      }
       BigInteger result = BigInteger.ONE;
       for (int i = number; i > 0; i--) {
          result = result.multiply(BigInteger.valueOf(i));
