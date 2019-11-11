@@ -6,6 +6,9 @@ import java.util.Map;
 
 public class Result {
 
+   private Result() {
+   }
+
    public static Map<String, String> getResult( BigDecimal result ) {
       return Map.of("result", result.toPlainString());
    }

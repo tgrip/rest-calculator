@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/calculator")
+@RequestMapping("/basic")
 public class CalculatorController {
 
    @GetMapping("/add")
