@@ -1,7 +1,7 @@
-package com.example.calculator;
+package com.example.calculator.scientific;
 
-import static com.example.calculator.ResultBuilder.getResult;
-import static com.example.calculator.ResultBuilder.getResultFromError;
+import static com.example.calculator.model.ResultBuilder.getResult;
+import static com.example.calculator.model.ResultBuilder.getResultFromError;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -11,14 +11,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.calculator.model.ApiResult;
+
 
 @RestController
 @RequestMapping("/scientific")
 public class ScientificController {
 
-   private final ScientificCalculator _scientificCalculator;
+   private final ScientificCalculatorService _scientificCalculator;
 
-   public ScientificController(ScientificCalculator scientificCalculator) {
+   public ScientificController( ScientificCalculatorService scientificCalculator) {
       _scientificCalculator = scientificCalculator;
    }
 

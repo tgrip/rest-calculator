@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.example.calculator.scientific;
 
 import java.math.BigInteger;
 
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class ScientificCalculator {
+public class ScientificCalculatorService {
 
    public BigInteger calculateFactorial( int number ) {
       if (number < 0) {

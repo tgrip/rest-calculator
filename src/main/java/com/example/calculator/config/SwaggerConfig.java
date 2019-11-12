@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.example.calculator.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

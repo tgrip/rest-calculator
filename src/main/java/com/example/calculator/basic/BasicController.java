@@ -1,7 +1,7 @@
-package com.example.calculator;
+package com.example.calculator.basic;
 
-import static com.example.calculator.ResultBuilder.getResult;
-import static com.example.calculator.ResultBuilder.getResultFromError;
+import static com.example.calculator.model.ResultBuilder.getResult;
+import static com.example.calculator.model.ResultBuilder.getResultFromError;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.calculator.model.ApiResult;
+
 
 @RestController
 @RequestMapping("/basic")
-public class CalculatorController {
+public class BasicController {
 
    @GetMapping("/add")
    public ApiResult add(@RequestParam BigDecimal augend, @RequestParam BigDecimal addend ) {
